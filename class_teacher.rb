@@ -12,5 +12,3 @@ class Teacher < Person
     true
   end
 end
-
-p Teacher.new(15, 'banda')
