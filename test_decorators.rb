@@ -1,5 +1,5 @@
-require_relative 'trimmer.rb'
-require_relative 'capitalize.rb'
+require_relative 'trimmer'
+require_relative 'capitalize'
 require_relative 'class_person'
 
 person = Person.new(22, 'maximilianus')
