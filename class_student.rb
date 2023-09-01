@@ -8,6 +8,11 @@ class Student < Person
     @classroom = classroom
   end
 
+  def add_classroom(classroom)
+    @classroom = classroom
+    classroom.add_student.push(self) unless classroom.add_student.include?(self)
+  end
+
   def play_hooky
     '¯(ツ)/¯'
   end
