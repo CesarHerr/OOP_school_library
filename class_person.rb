@@ -14,7 +14,7 @@ class Person < Nameable
     super()
   end
 
-  def add_rental(rental)
+  def add_rental(_rental)
     Rental.new(date, book, self)
   end
 
