@@ -18,15 +18,6 @@ rental2 = Rental.new('2023-09-01', book1, person2)
 rental3 = Rental.new('2023-09-02', book2, person1)
 rental4 = Rental.new('2023-09-03', book2, person3)
 
-# Add rentals to books and people
-book1.add_rental(rental1)
-book1.add_rental(rental2)
-book2.add_rental(rental3)
-book2.add_rental(rental4)
-person1.rental << rental1 << rental3
-person2.rental << rental2
-person3.rental << rental4
-
 # Print information about the rentals
 puts "Rentals of #{person1.name}:"
 person1.rental.each do |rental|
