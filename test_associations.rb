@@ -13,10 +13,10 @@ person2 = Person.new(17, 'Bob', parent_permission: false)
 person3 = Person.new(30, 'Charlie')
 
 # Create instances of rentals
-rental1 = Rental.new('2023-08-31', book1, person1)
-rental2 = Rental.new('2023-09-01', book1, person2)
-rental3 = Rental.new('2023-09-02', book2, person1)
-rental4 = Rental.new('2023-09-03', book2, person3)
+Rental.new('2023-08-31', book1, person1)
+Rental.new('2023-09-01', book1, person2)
+Rental.new('2023-09-02', book2, person1)
+Rental.new('2023-09-03', book2, person3)
 
 # Print information about the rentals
 puts "Rentals of #{person1.name}:"
