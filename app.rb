@@ -49,3 +49,22 @@ class App
       puts 'Wrong number!'
     end
   end
+
+  def create_student
+    puts 'create student'
+    print 'Age:'
+    age = gets.chomp
+
+    print 'Name:'
+    name = gets.chomp
+
+    print 'Classroom:'
+    classroom = gets.chomp
+    Classroom.new(classroom)
+
+    print 'Has parent permission? [y/n]:'
+    permission = gets.chomp.upcase == 'Y'
+    student = Student.new(age, classroom, name, parent_permission: permission)
+    @people.push(student)
+    puts "\nThe student was Created successfully"
+  end
