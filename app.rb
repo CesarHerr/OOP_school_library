@@ -110,3 +110,18 @@ class App
     @rentals.push(rental)
     puts 'Rental created successfully'
   end
+
+  def list_rentals
+    if @rentals.empty?
+      puts "\nThis is empty!! :("
+    else
+      puts "\nList all rentals for a given person id."
+      print "\nID of person:"
+      person_id = gets.chomp.to_i
+      rental_by_id = @rentals.select { |element| element.person.id == person_id }
+      rental_by_id.each_with_index do |element, index|
+        puts "#{index}) Date:#{element.date}, Book:#{element.book.title} by #{element.book.author}"
+      end
+    end
+  end
+end
