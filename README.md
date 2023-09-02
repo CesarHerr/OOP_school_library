@@ -87,7 +87,6 @@ git clone https://github.com/CesarHerr/OOP_school_library.git
 
 - [] **Add books**
 - [] **Save records of who borrowed a given book and when**
-- [] **User Interface**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

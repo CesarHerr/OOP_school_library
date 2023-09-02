@@ -1,4 +1,5 @@
 require_relative 'class_person'
+require_relative 'classroom'
 
 class Student < Person
   attr_accessor :classroom
