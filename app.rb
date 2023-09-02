@@ -95,3 +95,18 @@ class App
     @books.push(book)
     puts "\nBook created successfully"
   end
+
+  def create_rental
+    puts "\nCreate a rental"
+    puts "\nSelect  a book from the following list by number"
+    list_books
+    book_selected = @books[gets.chomp.to_i]
+    puts "\nSelect a person from the list by bumber (not id)"
+    list_people
+    person_selected = @people[gets.chomp.to_i]
+    print 'Date:'
+    date = gets.chomp.to_s
+    rental = Rental.new(date, book_selected, person_selected)
+    @rentals.push(rental)
+    puts 'Rental created successfully'
+  end
