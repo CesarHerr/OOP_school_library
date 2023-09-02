@@ -35,3 +35,17 @@ class App
       end
     end
   end
+
+  def create_person
+    print "\nDo you want to create a student (1) or a teachet (2)? [Input the number]:"
+    people = gets.chomp
+
+    case people
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    else
+      puts 'Wrong number!'
+    end
+  end
