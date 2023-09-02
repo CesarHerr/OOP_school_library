@@ -24,3 +24,14 @@ class App
       end
     end
   end
+
+  def list_people
+    if @people.empty?
+      puts "\nThis is empty!! :("
+    else
+      puts "\nList all people"
+      @people.each_with_index do |element, index|
+        puts "#{index}) [#{element.class}] Name:#{element.name}, Age:#{element.age}, ID:#{element.id}"
+      end
+    end
+  end
