@@ -79,6 +79,18 @@ git clone https://github.com/CesarHerr/OOP_school_library.git
 -   GitHub: [@CesarHerr](https://github.com/CesarHerr)
 -   LinkedIn: [Cesarherr](https://www.linkedin.com/in/cesarHerr/)
 
+👤 **Ruth Abreu**
+
+- GitHub: [@Ruthmy](https://github.com/Ruthmy)
+- Twitter: [@rury_exe](https://twitter.com/rury_exe)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ruth-abreu)
+
+👤 **Alexandre Sales Medina Ferreira**
+
+- GitHub: [@alexmedinasf](https://github.com/alexmedinasf)
+- Twitter: [@alexmedinasf](https://twitter.com/alexmedinasf)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/alexmedinasf)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
