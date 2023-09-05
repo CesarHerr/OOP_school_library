@@ -11,7 +11,6 @@ class People
     @people = []
   end
 
-
   def list_people
     if @people.empty?
       puts "\nThis is empty!! :("
