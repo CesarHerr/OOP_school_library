@@ -10,7 +10,7 @@ class Menu
       3 => { label: 'Create a people', action: -> { @menu.create_person } },
       4 => { label: 'Create a book', action: -> { @menu.create_book } },
       5 => { label: 'Create a rental', action: -> { @menu.create_rental } },
-      6 => { label: 'List all rentals for a given person id', action: -> { @menu.list_rentals} },
+      6 => { label: 'List all rentals for a given person id', action: -> { @menu.list_rentals } },
       7 => { label: 'Exit', action: -> { exit_application } }
     }.freeze
   end
