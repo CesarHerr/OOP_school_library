@@ -1,55 +1,28 @@
-require_relative 'rental'
-require_relative 'person_menu'
 require_relative 'book_menu'
-require_relative 'rentals_menu'
+require_relative 'person_menu'
+require_relative 'rental'
+require_relative 'app'
 
-class App
-  attr_accessor :books, :people, :rentals, :people_creator
+class RentalMenu
+  attr_accessor :rentals
 
-  def initialize
-    @books = BookMenu.new
-    @people = People.new
-    @rentals = RentalMenu.new(@books, @people)
-  end
-
-  def list_books
-    @books.list_books
-  end
-  require_relative 'rentals_menu'
-  def list_people
-    @people.list_people
-  end
-
-  def create_person
-    @people.create_person
-  end
-
-  def create_student
-    @people.create_student
-  end
-
-  def create_teacher
-    @people.create_teacher
-  end
-
-  def create_book
-    @books.create_book
+  def initialize(books, people)
+    @rentals = []
+    @books = books
+    @people = people
   end
 
   def create_rental
     puts "\nCreate a rental"
     puts "\nSelect  a book from the following list by number"
-    list_books
-    book_selected = @books[gets.chomp.to_i]
+    book_selected = @books.list_books[gets.chomp.to_i]
     puts "\nSelect a person from the list by bumber (not id)"
-    list_people
-    person_selected = @people[gets.chomp.to_i]
+    person_selected = @people.list_people[gets.chomp.to_i]
     print 'Date:'
     date = gets.chomp.to_s
     rental = Rental.new(date, book_selected, person_selected)
     @rentals.push(rental)
     puts 'Rental created successfully'
-
   end
 
   def list_rentals
@@ -64,6 +37,5 @@ class App
         puts "#{index}) Date:#{element.date}, Book:#{element.book.title} by #{element.book.author}"
       end
     end
-
   end
 end

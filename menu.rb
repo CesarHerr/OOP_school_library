@@ -1,15 +1,16 @@
+require_relative 'app'
+
 class Menu
   def initialize
-    @book_menu = BookMenu.new
-    @people_menu = PeopleMenu.new
-    @rental_menu = RentalMenu.new
+    @menu = App.new
+
     @options = {
-      1 => { label: 'List all books', action: -> { @book_menu.list_books } },
-      2 => { label: 'List all people', action: -> { @people_menu.list_people } },
-      3 => { label: 'Create a people', action: -> { @people_menu.create_person } },
-      4 => { label: 'Create a book', action: -> { @book_menu.create_book } },
-      5 => { label: 'Create a rental', action: -> { @rental_menu.create_rental } },
-      6 => { label: 'List all rentals for a given person id', action: -> { @rental_menu.list_rentals_by_person } },
+      1 => { label: 'List all books', action: -> { @menu.list_books } },
+      2 => { label: 'List all people', action: -> { @menu.list_people } },
+      3 => { label: 'Create a people', action: -> { @menu.create_person } },
+      4 => { label: 'Create a book', action: -> { @menu.create_book } },
+      5 => { label: 'Create a rental', action: -> { @menu.create_rental } },
+      6 => { label: 'List all rentals for a given person id', action: -> { @menu.list_rentals} },
       7 => { label: 'Exit', action: -> { exit_application } }
     }.freeze
   end

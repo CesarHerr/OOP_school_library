@@ -3,7 +3,6 @@ require_relative 'class_teacher'
 require_relative 'class_person'
 require_relative 'classroom'
 
-
 class People
   attr_accessor :people
 
