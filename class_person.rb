@@ -4,10 +4,10 @@ require_relative 'rental'
 class Person < Nameable
   attr_accessor :name, :age, :id, :rental
 
-  def initialize(age, id = nil,  name = 'Unknown', parent_permission: true)
-    @age = age
+  def initialize(age, id = nil, name = 'Unknown', parent_permission: true)
     @id = id || Random.rand(1..1000)
     @name = name
+    @age = age
     @parent_permission = parent_permission
     @rental = []
     super()

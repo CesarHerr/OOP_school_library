@@ -37,12 +37,12 @@ class People
   end
 
   def create_student_saved(data)
-    person = Student.new(data['age'], data['id'], data['classroom'], data['name'], parent_permission: data['parent_permission'])
+    person = Student.new(data['age'], data['classroom'], data['name'], data['id'], parent_permission: data['parent_permission'])
     @people << person
   end
 
   def create_teacher_saved(data)
-    person = Teacher.new(data['age'], data['id'], data['specialization'], data['name'])
+    person = Teacher.new(data['age'], data['specialization'], data['name'], data['id'])
     @people << person
   end
 

@@ -30,14 +30,6 @@ class App
     @people.create_person
   end
 
-  def create_student
-    @people.create_student
-  end
-
-  def create_teacher
-    @people.create_teacher
-  end
-
   def create_book
     @books.create_book
 
@@ -71,8 +63,9 @@ class App
     end
   end
 
-  # method to load json data
+  #method to load json data
   def loading_json
     load_books_from_json
+    @people.loading_people
   end
 end
