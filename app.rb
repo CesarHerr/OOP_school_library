@@ -3,7 +3,7 @@ require_relative 'book_menu'
 require_relative 'rentals_menu'
 
 class App
-  attr_accessor :books, :people, :rentals, :people_creator
+  attr_accessor :books, :people, :rentals
 
   def initialize
     @books = BookMenu.new
@@ -11,24 +11,20 @@ class App
     @rentals = RentalMenu.new(@books, @people)
   end
 
+  def loading_json
+    @people.loading_people
+  end
+
   def list_books
     @books.list_books
   end
-  require_relative 'rentals_menu'
+
   def list_people
     @people.list_people
   end
 
   def create_person
     @people.create_person
-  end
-
-  def create_student
-    @people.create_student
-  end
-
-  def create_teacher
-    @people.create_teacher
   end
 
   def create_book

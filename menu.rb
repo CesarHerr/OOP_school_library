@@ -16,6 +16,7 @@ class Menu
   end
 
   def run
+    @menu.loading_json
     loop do
       display_menu
       choice = gets.chomp.to_i
@@ -38,6 +39,7 @@ class Menu
   end
 
   def exit_application
+    @menu.people.save_people
     puts "\nThanks for using this app! :)"
   end
 end
