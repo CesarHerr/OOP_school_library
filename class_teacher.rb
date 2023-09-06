@@ -8,6 +8,18 @@ class Teacher < Person
     @specialization = specialization
   end
 
+  def to_hash
+    {
+      class: 'Teacher',
+      age: @age,
+      name: @name,
+      specialization: @specialization,
+      parent_permission: @parent_permission,
+      id: @id,
+      rentals: @rental
+    }
+  end
+
   def can_use_services?
     true
   end

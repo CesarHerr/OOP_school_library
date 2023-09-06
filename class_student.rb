@@ -9,6 +9,18 @@ class Student < Person
     @classroom = classroom
   end
 
+  def to_hash
+    {
+      class: 'Student',
+      age: @age,
+      name: @name,
+      classroom: @classroom,
+      parent_permission: @parent_permission,
+      id: @id,
+      rentals: @rental
+    }
+  end
+
   def add_classroom(classroom)
     @classroom = classroom
     classroom.add_student.push(self) unless classroom.add_student.include?(self)
