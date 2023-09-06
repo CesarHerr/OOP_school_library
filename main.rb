@@ -2,12 +2,12 @@
 require_relative 'menu'
 
 def main
-  menu = Menu.new
+  app = App.new
+
+  menu = Menu.new(app)
   menu.run
+
+  app.save_books_to_json # save data to json files on program exit
 end
 
-app = App.new
-app.load_books_from_json # load books data from json files
-
 main
-app.save_data_to_json # save data to json files on program exit
