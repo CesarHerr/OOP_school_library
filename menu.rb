@@ -1,8 +1,8 @@
 require_relative 'app'
 
 class Menu
-  def initialize
-    @menu = App.new
+  def initialize(app)
+    @menu = app
 
     @options = {
       1 => { label: 'List all books', action: -> { @menu.list_books } },
@@ -16,16 +16,15 @@ class Menu
   end
 
   def run
+    @menu.loading_json
     loop do
       display_menu
       choice = gets.chomp.to_i
-
       if @options.key?(choice)
         @options[choice][:action].call
       else
         puts "\nWrong number, try again"
       end
-
       break if choice == 7
     end
   end
@@ -38,6 +37,9 @@ class Menu
   end
 
   def exit_application
+    @menu.people.save_people
+    @menu.rentals.save_rentals
+    @menu.save_books_to_json if @menu.books_modified
     puts "\nThanks for using this app! :)"
   end
 end

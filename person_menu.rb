@@ -2,6 +2,7 @@ require_relative 'class_student'
 require_relative 'class_teacher'
 require_relative 'class_person'
 require_relative 'classroom'
+require 'json'
 
 class People
   attr_accessor :people
@@ -19,6 +20,42 @@ class People
         puts "#{index}) [#{element.class}] Name:#{element.name}, Age:#{element.age}, ID:#{element.id}"
       end
     end
+  end
+
+  def loading_people
+    return unless File.exist?('people.json')
+
+    people_data = JSON.parse(File.read('people.json'))
+    people_data.each do |data|
+      if data['class'] == 'Student'
+        create_student_saved(data)
+
+      elsif data['class'] == 'Teacher'
+        create_teacher_saved(data)
+      end
+    end
+  end
+
+  def create_student_saved(data)
+    person = Student.new(
+      data['age'],
+      data['classroom'],
+      data['name'],
+      data['id'],
+      parent_permission: data['parent_permission']
+    )
+    @people << person
+  end
+
+  def create_teacher_saved(data)
+    person = Teacher.new(data['age'], data['specialization'], data['name'], data['id'])
+    @people << person
+  end
+
+  def save_people
+    people_data = @people.map(&:to_hash)
+
+    File.write('people.json', JSON.pretty_generate(people_data))
   end
 
   def create_person

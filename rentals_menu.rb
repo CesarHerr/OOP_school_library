@@ -38,4 +38,28 @@ class RentalMenu
       end
     end
   end
+
+  def save_rentals
+    rental_data = @rentals.map do |rental|
+      {
+        date: rental.date,
+        book: rental.book.to_hash,
+        person: rental.person.to_hash
+      }
+    end
+
+    File.write('rentals.json', JSON.pretty_generate(rental_data))
+  end
+
+  def loading_rentals
+    return unless File.exist?('rentals.json')
+
+    rentals_data = JSON.parse(File.read('rentals.json'))
+    rentals_data.each do |rental|
+      book = Book.new(rental['book']['title'], rental['book']['author'])
+      person = Person.new(rental['person']['age'], rental['person']['id'],
+                          rental['person']['name'])
+      @rentals.push(Rental.new(rental['date'], book, person))
+    end
+  end
 end
