@@ -37,7 +37,13 @@ class People
   end
 
   def create_student_saved(data)
-    person = Student.new(data['age'], data['classroom'], data['name'], data['id'], parent_permission: data['parent_permission'])
+    person = Student.new(
+      data['age'],
+      data['classroom'],
+      data['name'],
+      data['id'],
+      parent_permission: data['parent_permission']
+    )
     @people << person
   end
 
@@ -49,7 +55,7 @@ class People
   def save_people
     people_data = @people.map(&:to_hash)
 
-    File.write('people.json', people_data.to_json)
+    File.write('people.json', JSON.pretty_generate(people_data))
   end
 
   def create_person
