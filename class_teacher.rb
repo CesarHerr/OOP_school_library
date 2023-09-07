@@ -15,7 +15,7 @@ class Teacher < Person
       name: @name,
       id: @id,
       specialization: @specialization,
-      parent_permission: @parent_permission,
+      parent_permission: @parent_permission
     }
   end
 
