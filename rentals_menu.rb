@@ -38,4 +38,16 @@ class RentalMenu
       end
     end
   end
+
+  def save_rentals
+    rental_data = @rentals.map do |rental|
+      {
+        date: rental.date,
+        book: rental.book.to_hash,
+        person: rental.person.to_hash
+      }
+    end
+
+    File.write('rentals.json', JSON.pretty_generate(rental_data))
+  end
 end
