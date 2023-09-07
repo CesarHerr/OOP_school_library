@@ -29,4 +29,22 @@ class BookMenu
     @books.push(book)
     puts "\nBook created successfully"
   end
+
+  def save_books_to_json
+    json_data = @books.books.map { |book| { title: book.title, author: book.author } }
+    File.write('books.json', JSON.pretty_generate(json_data))
+  end
+
+  def load_books_from_json
+    return unless File.exist?('books.json')
+
+    begin
+      json_data = JSON.parse(File.read('books.json'))
+      @books = [] # clean book list
+      json_data.each do |book_data|
+        book = Book.new(book_data['title'], book_data['author'])
+        @books << book
+      end
+    end
+  end
 end

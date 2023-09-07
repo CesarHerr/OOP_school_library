@@ -11,12 +11,6 @@ class App
     @people = People.new
     @rentals = RentalMenu.new(@books, @people)
     @books_modified = false
-
-    load_books_from_json
-  end
-
-  def load_books_from_json
-    @books.load_books_from_json
   end
 
   def list_books
@@ -44,30 +38,8 @@ class App
     @rentals.list_rentals
   end
 
-    # save books in json
-  def save_books_to_json
-    json_data = @books.books.map { |book| { title: book.title, author: book.author } }
-    File.open('books.json', 'w') do |file|
-      file.write(JSON.pretty_generate(json_data))
-    end
-  end
-
-  # load books from json
-  def load_books_from_json
-    if File.exist?('books.json')
-      begin
-        json_data = JSON.parse(File.read('books.json'))
-        @books.books = [] # clean book list
-        json_data.each do |book_data|
-          book = Book.new(book_data['title'], book_data['author'])
-          @books.books << book
-        end
-      end
-    end
-  end
-
   def loading_json
     @people.loading_people
+    @books.load_books_from_json
   end
-
 end
