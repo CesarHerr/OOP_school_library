@@ -1,10 +1,14 @@
 [
   {
-    "title": "1",
-    "author": "a"
+    "title": "Game of thrones",
+    "author": "George Martin"
   },
   {
-    "title": "2",
-    "author": "b"
+    "title": "Harry Potter",
+    "author": "J.K. Rowling"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien"
   }
 ]

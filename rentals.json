@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2023/09/06",
+    "book": {
+      "title": "Game of thrones",
+      "author": "George Martin"
+    },
+    "person": {
+      "age": "16",
+      "id": 867,
+      "name": "Anthony",
+      "parent_permission": true
+    }
+  },
+  {
+    "date": "2023/09/06",
+    "book": {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien"
+    },
+    "person": {
+      "age": "16",
+      "id": 867,
+      "name": "Anthony",
+      "parent_permission": true
+    }
+  }
+]

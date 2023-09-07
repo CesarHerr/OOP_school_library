@@ -1,1 +1,18 @@
-[{"class":"Student","age":"15","id":936,"name":"cesar","classroom":"class","parent_permission":true}]
+[
+  {
+    "class": "Student",
+    "age": "16",
+    "name": "Anthony",
+    "id": 867,
+    "classroom": "A",
+    "parent_permission": true
+  },
+  {
+    "class": "Teacher",
+    "age": "70",
+    "name": "Albus Dumbledore",
+    "id": 170,
+    "specialization": "Magic",
+    "parent_permission": true
+  }
+]
