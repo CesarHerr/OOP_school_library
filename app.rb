@@ -41,5 +41,6 @@ class App
   def loading_json
     @people.loading_people
     @books.load_books_from_json
+    @rentals.loading_rentals
   end
 end

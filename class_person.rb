@@ -13,6 +13,15 @@ class Person < Nameable
     super()
   end
 
+  def to_hash
+    {
+      age: @age,
+      id: @id,
+      name: @name,
+      parent_permission: @parent_permission
+    }
+  end
+
   def add_rental(_rental)
     Rental.new(date, book, self)
   end
