@@ -31,7 +31,7 @@ class BookMenu
   end
 
   def save_books_to_json
-    json_data = @books.books.map { |book| { title: book.title, author: book.author } }
+    json_data = @books.map { |book| { title: book.title, author: book.author } }
     File.write('books.json', JSON.pretty_generate(json_data))
   end
 
