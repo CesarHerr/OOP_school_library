@@ -39,7 +39,7 @@ class Menu
   def exit_application
     @menu.people.save_people
     @menu.rentals.save_rentals
-    @menu.save_books_to_json if @menu.books_modified
+    @menu.books.save_books_to_json if @menu.books_modified
     puts "\nThanks for using this app! :)"
   end
 end
