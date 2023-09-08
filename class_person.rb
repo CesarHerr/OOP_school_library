@@ -1,7 +1,7 @@
 require_relative 'nameable'
 require_relative 'rental'
 
-class Person 
+class Person
   attr_accessor :name, :age, :id, :rental
 
   def initialize(age, id = nil, name = 'Unknown', parent_permission: true)

@@ -4,7 +4,7 @@ require_relative '../trimmer'
 require 'rspec'
 
 describe TrimmerDecorator do
-  let(:nameable) { double("Nameable") }
+  let(:nameable) { double('Nameable') }
   let(:decorated_nameable) { TrimmerDecorator.new(nameable) }
 
   it 'trims the name to 10 characters' do

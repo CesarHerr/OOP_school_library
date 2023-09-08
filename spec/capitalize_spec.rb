@@ -4,7 +4,7 @@ require_relative '../capitalize'
 require 'rspec'
 
 describe CapitalizeDecorator do
-  let(:nameable) { double("Nameable") }
+  let(:nameable) { double('Nameable') }
   let(:decorated_nameable) { CapitalizeDecorator.new(nameable) }
 
   before do
