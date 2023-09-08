@@ -1,7 +1,7 @@
 require_relative 'nameable'
 require_relative 'rental'
 
-class Person
+class Person < Nameable
   attr_accessor :name, :age, :id, :rental
 
   def initialize(age, id = nil, name = 'Unknown', parent_permission: true)
@@ -10,6 +10,7 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @rental = []
+    super()
   end
 
   def to_hash
